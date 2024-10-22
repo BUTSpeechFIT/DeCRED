@@ -1,0 +1,772 @@
+{
+  "builder_name": "ami",
+  "citation": "@inproceedings{10.1007/11677482_3,\nauthor = {Carletta, Jean and Ashby, Simone and Bourban, Sebastien and Flynn, Mike and Guillemot, Mael and Hain, Thomas and Kadlec, Jaroslav and Karaiskos, Vasilis and Kraaij, Wessel and Kronenthal, Melissa and Lathoud, Guillaume and Lincoln, Mike and Lisowska, Agnes and McCowan, Iain and Post, Wilfried and Reidsma, Dennis and Wellner, Pierre},\ntitle = {The AMI Meeting Corpus: A Pre-Announcement},\nyear = {2005},\nisbn = {3540325492},\npublisher = {Springer-Verlag},\naddress = {Berlin, Heidelberg},\nurl = {https://doi.org/10.1007/11677482_3},\ndoi = {10.1007/11677482_3},\nabstract = {The AMI Meeting Corpus is a multi-modal data set consisting of 100 hours of meeting\nrecordings. It is being created in the context of a project that is developing meeting\nbrowsing technology and will eventually be released publicly. Some of the meetings\nit contains are naturally occurring, and some are elicited, particularly using a scenario\nin which the participants play different roles in a design team, taking a design project\nfrom kick-off to completion over the course of a day. The corpus is being recorded\nusing a wide range of devices including close-talking and far-field microphones, individual\nand room-view video cameras, projection, a whiteboard, and individual pens, all of\nwhich produce output signals that are synchronized with each other. It is also being\nhand-annotated for many different phenomena, including orthographic transcription,\ndiscourse properties such as named entities and dialogue acts, summaries, emotions,\nand some head and hand gestures. We describe the data set, including the rationale\nbehind using elicited material, and explain how the material is being recorded, transcribed\nand annotated.},\nbooktitle = {Proceedings of the Second International Conference on Machine Learning for Multimodal Interaction},\npages = {28\u201339},\nnumpages = {12},\nlocation = {Edinburgh, UK},\nseries = {MLMI'05}\n}\n",
+  "config_name": "ihm",
+  "dataset_name": "ami",
+  "dataset_size": 42732729,
+  "description": "The AMI Meeting Corpus consists of 100 hours of meeting recordings. The recordings use a range of signals\nsynchronized to a common timeline. These include close-talking and far-field microphones, individual and\nroom-view video cameras, and output from a slide projector and an electronic whiteboard. During the meetings,\nthe participants also have unsynchronized pens available to them that record what is written. The meetings\nwere recorded in English using three different rooms with different acoustic properties, and include mostly\nnon-native speakers. \n\n",
+  "download_checksums": {
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/EN2001a.tar.gz": {
+      "num_bytes": 119892061,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/EN2001b.tar.gz": {
+      "num_bytes": 78842808,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/EN2001d.tar.gz": {
+      "num_bytes": 74661044,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/EN2001e.tar.gz": {
+      "num_bytes": 99132680,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/EN2003a.tar.gz": {
+      "num_bytes": 47219666,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/EN2004a.tar.gz": {
+      "num_bytes": 95732550,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/EN2005a.tar.gz": {
+      "num_bytes": 136228439,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/EN2006a.tar.gz": {
+      "num_bytes": 70161382,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/EN2006b.tar.gz": {
+      "num_bytes": 61670047,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/EN2009b.tar.gz": {
+      "num_bytes": 64117350,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/EN2009c.tar.gz": {
+      "num_bytes": 82350004,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/EN2009d.tar.gz": {
+      "num_bytes": 157491400,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2002a.tar.gz": {
+      "num_bytes": 21090254,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2002b.tar.gz": {
+      "num_bytes": 51658070,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2002c.tar.gz": {
+      "num_bytes": 60002274,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2002d.tar.gz": {
+      "num_bytes": 58683012,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2003a.tar.gz": {
+      "num_bytes": 16420195,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2003b.tar.gz": {
+      "num_bytes": 49191012,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2003c.tar.gz": {
+      "num_bytes": 54871818,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2003d.tar.gz": {
+      "num_bytes": 56609410,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2005a.tar.gz": {
+      "num_bytes": 7092556,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2005b.tar.gz": {
+      "num_bytes": 56086595,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2005c.tar.gz": {
+      "num_bytes": 62949767,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2005d.tar.gz": {
+      "num_bytes": 41369211,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2006a.tar.gz": {
+      "num_bytes": 26232011,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2006b.tar.gz": {
+      "num_bytes": 54400904,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2006c.tar.gz": {
+      "num_bytes": 59031897,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2006d.tar.gz": {
+      "num_bytes": 53895670,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2007a.tar.gz": {
+      "num_bytes": 22719594,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2007b.tar.gz": {
+      "num_bytes": 39113321,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2007c.tar.gz": {
+      "num_bytes": 54681270,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2007d.tar.gz": {
+      "num_bytes": 30618738,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2008a.tar.gz": {
+      "num_bytes": 21565118,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2008b.tar.gz": {
+      "num_bytes": 47308015,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2008c.tar.gz": {
+      "num_bytes": 51075351,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2008d.tar.gz": {
+      "num_bytes": 62166088,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2009a.tar.gz": {
+      "num_bytes": 36368943,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2009b.tar.gz": {
+      "num_bytes": 35596627,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2009c.tar.gz": {
+      "num_bytes": 50404374,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2009d.tar.gz": {
+      "num_bytes": 57421444,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2010a.tar.gz": {
+      "num_bytes": 12878738,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2010b.tar.gz": {
+      "num_bytes": 37592459,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2010c.tar.gz": {
+      "num_bytes": 45072443,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2010d.tar.gz": {
+      "num_bytes": 29029070,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2012a.tar.gz": {
+      "num_bytes": 23874480,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2012b.tar.gz": {
+      "num_bytes": 46684034,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2012c.tar.gz": {
+      "num_bytes": 52762313,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2012d.tar.gz": {
+      "num_bytes": 23743197,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2013a.tar.gz": {
+      "num_bytes": 13885323,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2013b.tar.gz": {
+      "num_bytes": 41948371,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2013c.tar.gz": {
+      "num_bytes": 47062608,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2013d.tar.gz": {
+      "num_bytes": 33781531,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2014a.tar.gz": {
+      "num_bytes": 23491299,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2014b.tar.gz": {
+      "num_bytes": 49412842,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2014c.tar.gz": {
+      "num_bytes": 51218350,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2014d.tar.gz": {
+      "num_bytes": 69453194,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2015a.tar.gz": {
+      "num_bytes": 24667372,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2015b.tar.gz": {
+      "num_bytes": 55008927,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2015c.tar.gz": {
+      "num_bytes": 52562885,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2015d.tar.gz": {
+      "num_bytes": 51786100,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2016a.tar.gz": {
+      "num_bytes": 28111346,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2016b.tar.gz": {
+      "num_bytes": 45148531,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2016c.tar.gz": {
+      "num_bytes": 43460048,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/ES2016d.tar.gz": {
+      "num_bytes": 31131106,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/IB4005.tar.gz": {
+      "num_bytes": 76908586,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/IN1001.tar.gz": {
+      "num_bytes": 127412710,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/IN1002.tar.gz": {
+      "num_bytes": 96513334,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/IN1005.tar.gz": {
+      "num_bytes": 104982746,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/IN1007.tar.gz": {
+      "num_bytes": 106785016,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/IN1008.tar.gz": {
+      "num_bytes": 119056404,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/IN1009.tar.gz": {
+      "num_bytes": 41563028,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/IN1012.tar.gz": {
+      "num_bytes": 144421742,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/IN1013.tar.gz": {
+      "num_bytes": 143996154,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/IN1014.tar.gz": {
+      "num_bytes": 133762100,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/IN1016.tar.gz": {
+      "num_bytes": 146411955,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/IS1000a.tar.gz": {
+      "num_bytes": 40663009,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/IS1000b.tar.gz": {
+      "num_bytes": 74984346,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/IS1000c.tar.gz": {
+      "num_bytes": 71834186,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/IS1000d.tar.gz": {
+      "num_bytes": 88451144,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/IS1001a.tar.gz": {
+      "num_bytes": 26894852,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/IS1001b.tar.gz": {
+      "num_bytes": 67967168,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/IS1001c.tar.gz": {
+      "num_bytes": 45038526,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/IS1001d.tar.gz": {
+      "num_bytes": 25523935,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/IS1002b.tar.gz": {
+      "num_bytes": 85080401,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/IS1002c.tar.gz": {
+      "num_bytes": 75551231,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/IS1002d.tar.gz": {
+      "num_bytes": 44597845,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/IS1003a.tar.gz": {
+      "num_bytes": 20391916,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/IS1003b.tar.gz": {
+      "num_bytes": 43207154,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/IS1003c.tar.gz": {
+      "num_bytes": 62414681,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/IS1003d.tar.gz": {
+      "num_bytes": 87909609,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/IS1004a.tar.gz": {
+      "num_bytes": 21429803,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/IS1004b.tar.gz": {
+      "num_bytes": 75790401,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/IS1004c.tar.gz": {
+      "num_bytes": 79086392,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/IS1004d.tar.gz": {
+      "num_bytes": 64983656,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/IS1005a.tar.gz": {
+      "num_bytes": 24791350,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/IS1005b.tar.gz": {
+      "num_bytes": 72010274,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/IS1005c.tar.gz": {
+      "num_bytes": 65277203,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/IS1006a.tar.gz": {
+      "num_bytes": 30925492,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/IS1006b.tar.gz": {
+      "num_bytes": 75749514,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/IS1006c.tar.gz": {
+      "num_bytes": 71492356,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/IS1006d.tar.gz": {
+      "num_bytes": 80725781,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/IS1007a.tar.gz": {
+      "num_bytes": 27624669,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/IS1007b.tar.gz": {
+      "num_bytes": 43676316,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/IS1007c.tar.gz": {
+      "num_bytes": 71738686,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/IS1007d.tar.gz": {
+      "num_bytes": 75636163,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/TS3005a.tar.gz": {
+      "num_bytes": 29013943,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/TS3005b.tar.gz": {
+      "num_bytes": 66650983,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/TS3005c.tar.gz": {
+      "num_bytes": 61473365,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/TS3005d.tar.gz": {
+      "num_bytes": 83993230,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/TS3006a.tar.gz": {
+      "num_bytes": 29936501,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/TS3006b.tar.gz": {
+      "num_bytes": 73120901,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/TS3006c.tar.gz": {
+      "num_bytes": 79728182,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/TS3006d.tar.gz": {
+      "num_bytes": 92460386,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/TS3007a.tar.gz": {
+      "num_bytes": 33499273,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/TS3007b.tar.gz": {
+      "num_bytes": 66253365,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/TS3007c.tar.gz": {
+      "num_bytes": 75178805,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/TS3007d.tar.gz": {
+      "num_bytes": 79657996,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/TS3008a.tar.gz": {
+      "num_bytes": 27767997,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/TS3008b.tar.gz": {
+      "num_bytes": 65515158,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/TS3008c.tar.gz": {
+      "num_bytes": 69546641,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/TS3008d.tar.gz": {
+      "num_bytes": 78192612,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/TS3009a.tar.gz": {
+      "num_bytes": 44030208,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/TS3009b.tar.gz": {
+      "num_bytes": 76343754,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/TS3009c.tar.gz": {
+      "num_bytes": 76775681,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/TS3009d.tar.gz": {
+      "num_bytes": 71162749,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/TS3010a.tar.gz": {
+      "num_bytes": 12125325,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/TS3010b.tar.gz": {
+      "num_bytes": 36131069,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/TS3010c.tar.gz": {
+      "num_bytes": 39373943,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/TS3010d.tar.gz": {
+      "num_bytes": 30742470,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/TS3011a.tar.gz": {
+      "num_bytes": 35888871,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/TS3011b.tar.gz": {
+      "num_bytes": 59023269,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/TS3011c.tar.gz": {
+      "num_bytes": 60030223,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/TS3011d.tar.gz": {
+      "num_bytes": 48309886,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/TS3012a.tar.gz": {
+      "num_bytes": 17423833,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/TS3012b.tar.gz": {
+      "num_bytes": 70606875,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/TS3012c.tar.gz": {
+      "num_bytes": 65640324,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/train/TS3012d.tar.gz": {
+      "num_bytes": 56983518,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/dev/ES2011a.tar.gz": {
+      "num_bytes": 22928204,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/dev/ES2011c.tar.gz": {
+      "num_bytes": 39854564,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/dev/IB4001.tar.gz": {
+      "num_bytes": 57624355,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/dev/IB4003.tar.gz": {
+      "num_bytes": 80015008,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/dev/IB4010.tar.gz": {
+      "num_bytes": 118888672,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/dev/IS1008a.tar.gz": {
+      "num_bytes": 27664191,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/dev/IS1008c.tar.gz": {
+      "num_bytes": 51243799,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/dev/TS3004a.tar.gz": {
+      "num_bytes": 26968160,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/dev/TS3004c.tar.gz": {
+      "num_bytes": 61514360,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/dev/ES2011b.tar.gz": {
+      "num_bytes": 36777259,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/dev/ES2011d.tar.gz": {
+      "num_bytes": 40670629,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/dev/IB4002.tar.gz": {
+      "num_bytes": 49660193,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/dev/IB4004.tar.gz": {
+      "num_bytes": 100555387,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/dev/IB4011.tar.gz": {
+      "num_bytes": 92243633,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/dev/IS1008b.tar.gz": {
+      "num_bytes": 52089701,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/dev/IS1008d.tar.gz": {
+      "num_bytes": 49752330,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/dev/TS3004b.tar.gz": {
+      "num_bytes": 57748915,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/dev/TS3004d.tar.gz": {
+      "num_bytes": 58330707,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/eval/EN2002a.tar.gz": {
+      "num_bytes": 62847922,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/eval/EN2002b.tar.gz": {
+      "num_bytes": 46936103,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/eval/EN2002c.tar.gz": {
+      "num_bytes": 79241633,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/eval/EN2002d.tar.gz": {
+      "num_bytes": 65991071,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/eval/ES2004a.tar.gz": {
+      "num_bytes": 22742938,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/eval/ES2004b.tar.gz": {
+      "num_bytes": 56561296,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/eval/ES2004c.tar.gz": {
+      "num_bytes": 54100050,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/eval/ES2004d.tar.gz": {
+      "num_bytes": 48241000,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/eval/IS1009a.tar.gz": {
+      "num_bytes": 25130136,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/eval/IS1009b.tar.gz": {
+      "num_bytes": 70354979,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/eval/IS1009c.tar.gz": {
+      "num_bytes": 56584589,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/eval/IS1009d.tar.gz": {
+      "num_bytes": 62263610,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/eval/TS3003a.tar.gz": {
+      "num_bytes": 28372399,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/eval/TS3003b.tar.gz": {
+      "num_bytes": 49885713,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/eval/TS3003c.tar.gz": {
+      "num_bytes": 51981957,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/audio/ihm/eval/TS3003d.tar.gz": {
+      "num_bytes": 56576545,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/annotations/train/text": {
+      "num_bytes": 8241018,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/annotations/dev/text": {
+      "num_bytes": 979345,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/edinburghcstr/ami/resolve/main/annotations/eval/text": {
+      "num_bytes": 944225,
+      "checksum": null
+    }
+  },
+  "download_size": 9928239303,
+  "features": {
+    "text": {
+      "dtype": "string",
+      "_type": "Value"
+    }
+  },
+  "homepage": "https://groups.inf.ed.ac.uk/ami/corpus/",
+  "license": "CC BY 4.0",
+  "size_in_bytes": 9970972032,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 34602011,
+      "num_examples": 108502,
+      "shard_lengths": [
+        20504,
+        10358,
+        9127,
+        13507,
+        14286,
+        10154,
+        16206,
+        14360
+      ],
+      "dataset_name": "ami"
+    },
+    "validation": {
+      "name": "validation",
+      "num_bytes": 4125125,
+      "num_examples": 13098,
+      "shard_lengths": [
+        1689,
+        2315,
+        854,
+        1693,
+        1493,
+        1960,
+        922,
+        2172
+      ],
+      "dataset_name": "ami"
+    },
+    "test": {
+      "name": "test",
+      "num_bytes": 4005593,
+      "num_examples": 12643,
+      "shard_lengths": [
+        2322,
+        2801,
+        1049,
+        1617,
+        894,
+        1184,
+        1084,
+        1692
+      ],
+      "dataset_name": "ami"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "builder_name": "fleurs",
+  "citation": "\n",
+  "config_name": "en_us",
+  "dataset_name": "fleurs",
+  "dataset_size": 2377724878,
+  "description": "FLEURS is the speech version of the FLORES machine translation benchmark, covering 2000 n-way parallel sentences in n=102 languages.\nFLEURS is the speech version of the FLORES machine translation benchmark, covering 2000 n-way parallel sentences in n=102 languages.",
+  "download_checksums": {
+    "data/en_us/audio/train.tar.gz": {
+      "num_bytes": 1380572241,
+      "checksum": null
+    },
+    "data/en_us/audio/dev.tar.gz": {
+      "num_bytes": 171250900,
+      "checksum": null
+    },
+    "data/en_us/audio/test.tar.gz": {
+      "num_bytes": 289851356,
+      "checksum": null
+    },
+    "data/en_us/train.tsv": {
+      "num_bytes": 1414907,
+      "checksum": null
+    },
+    "data/en_us/dev.tsv": {
+      "num_bytes": 213065,
+      "checksum": null
+    },
+    "data/en_us/test.tsv": {
+      "num_bytes": 367864,
+      "checksum": null
+    }
+  },
+  "download_size": 1843670333,
+  "features": {
+    "text": {
+      "dtype": "string",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 4221395211,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 1727339053,
+      "num_examples": 2602,
+      "shard_lengths": [
+        800,
+        800,
+        800,
+        202
+      ],
+      "dataset_name": "fleurs"
+    },
+    "validation": {
+      "name": "validation",
+      "num_bytes": 241190658,
+      "num_examples": 394,
+      "dataset_name": "fleurs"
+    },
+    "test": {
+      "name": "test",
+      "num_bytes": 409195167,
+      "num_examples": 647,
+      "dataset_name": "fleurs"
+    }
+  },
+  "supervised_keys": {
+    "input": "audio",
+    "output": "transcription"
+  },
+  "version": {
+    "version_str": "2.0.0",
+    "description": "",
+    "major": 2,
+    "minor": 0,
+    "patch": 0
+  }
+}

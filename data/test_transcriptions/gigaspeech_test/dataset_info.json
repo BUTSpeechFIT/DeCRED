@@ -1,0 +1,103 @@
+{
+  "builder_name": "gigaspeech",
+  "citation": "@article{DBLP:journals/corr/abs-2106-06909,\n  author    = {Guoguo Chen and\n               Shuzhou Chai and\n               Guanbo Wang and\n               Jiayu Du and\n               Wei{-}Qiang Zhang and\n               Chao Weng and\n               Dan Su and\n               Daniel Povey and\n               Jan Trmal and\n               Junbo Zhang and\n               Mingjie Jin and\n               Sanjeev Khudanpur and\n               Shinji Watanabe and\n               Shuaijiang Zhao and\n               Wei Zou and\n               Xiangang Li and\n               Xuchen Yao and\n               Yongqing Wang and\n               Yujun Wang and\n               Zhao You and\n               Zhiyong Yan},\n  title     = {GigaSpeech: An Evolving, Multi-domain {ASR} Corpus with 10, 000 Hours\n               of Transcribed Audio},\n  journal   = {CoRR},\n  volume    = {abs/2106.06909},\n  year      = {2021},\n  url       = {https://arxiv.org/abs/2106.06909},\n  eprinttype = {arXiv},\n  eprint    = {2106.06909},\n  timestamp = {Wed, 29 Dec 2021 14:29:26 +0100},\n  biburl    = {https://dblp.org/rec/journals/corr/abs-2106-06909.bib},\n  bibsource = {dblp computer science bibliography, https://dblp.org}\n}\n",
+  "config_name": "xs",
+  "dataset_name": "gigaspeech",
+  "dataset_size": 18664041,
+  "description": "GigaSpeech is an evolving, multi-domain English speech recognition corpus with 10,000 hours of high quality\nlabeled audio suitable for supervised training, and 40,000 hours of total audio suitable for semi-supervised\nand unsupervised training. Around 40,000 hours of transcribed audio is first collected from audiobooks, podcasts\nand YouTube, covering both read and spontaneous speaking styles, and a variety of topics, such as arts, science,\nsports, etc. A new forced alignment and segmentation pipeline is proposed to create sentence segments suitable\nfor speech recognition training, and to filter out segments with low-quality transcription. For system training,\nGigaSpeech provides five subsets of different sizes, 10h, 250h, 1000h, 2500h, and 10000h.\nFor our 10,000-hour XL training subset, we cap the word error rate at 4% during the filtering/validation stage,\nand for all our other smaller training subsets, we cap it at 0%. The DEV and TEST evaluation sets, on the other hand,\nare re-processed by professional human transcribers to ensure high transcription quality.\n",
+  "download_checksums": {
+    "https://huggingface.co/datasets/speechcolab/gigaspeech/resolve/main/data/xs_n_archives.txt": {
+      "num_bytes": 2,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/speechcolab/gigaspeech/resolve/main/data/dev_n_archives.txt": {
+      "num_bytes": 2,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/speechcolab/gigaspeech/resolve/main/data/test_n_archives.txt": {
+      "num_bytes": 2,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/speechcolab/gigaspeech/resolve/main/data/audio/xs_files/xs_chunks_0000.tar.gz": {
+      "num_bytes": 971826860,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/speechcolab/gigaspeech/resolve/main/data/audio/dev_files/dev_chunks_0000.tar.gz": {
+      "num_bytes": 1229672085,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/speechcolab/gigaspeech/resolve/main/data/audio/test_files/test_chunks_0000.tar.gz": {
+      "num_bytes": 1548395222,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/speechcolab/gigaspeech/resolve/main/data/audio/test_files/test_chunks_0001.tar.gz": {
+      "num_bytes": 1555209700,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/speechcolab/gigaspeech/resolve/main/data/audio/test_files/test_chunks_0002.tar.gz": {
+      "num_bytes": 860798185,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/speechcolab/gigaspeech/resolve/main/data/metadata/xs_metadata/xs_chunks_0000_metadata.csv": {
+      "num_bytes": 3280654,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/speechcolab/gigaspeech/resolve/main/data/metadata/dev_metadata/dev_chunks_0000_metadata.csv": {
+      "num_bytes": 1965326,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/speechcolab/gigaspeech/resolve/main/data/metadata/test_metadata/test_chunks_0000_metadata.csv": {
+      "num_bytes": 2662420,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/speechcolab/gigaspeech/resolve/main/data/metadata/test_metadata/test_chunks_0001_metadata.csv": {
+      "num_bytes": 2658923,
+      "checksum": null
+    },
+    "https://huggingface.co/datasets/speechcolab/gigaspeech/resolve/main/data/metadata/test_metadata/test_chunks_0002_metadata.csv": {
+      "num_bytes": 1493893,
+      "checksum": null
+    }
+  },
+  "download_size": 6177963274,
+  "features": {
+    "text": {
+      "dtype": "string",
+      "_type": "Value"
+    }
+  },
+  "homepage": "https://github.com/SpeechColab/GigaSpeech",
+  "license": "Apache License 2.0",
+  "size_in_bytes": 6196627315,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 4684069,
+      "num_examples": 9389,
+      "dataset_name": "gigaspeech"
+    },
+    "validation": {
+      "name": "validation",
+      "num_bytes": 3041899,
+      "num_examples": 6750,
+      "dataset_name": "gigaspeech"
+    },
+    "test": {
+      "name": "test",
+      "num_bytes": 10938073,
+      "num_examples": 25619,
+      "shard_lengths": [
+        10000,
+        10000,
+        5619
+      ],
+      "dataset_name": "gigaspeech"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}
