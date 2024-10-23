@@ -46,7 +46,11 @@ The following table summarizes the Zero-Attention Internal Language Model (ILM) 
 ## Usage
 
 ### Inference
-To perform inference, please refer to the [demo](demo.ipynb) notebook, which demonstrates how to use a pre-trained DeCRED model for ASR tasks.
+To perform inference, please visit our [Hugging Face Space](https://huggingface.co/spaces/BUT-FIT/DeCRED-ASR) to test the pre-trained DeCRED model in real-time. 
+
+However, for better performance, we recommend testing it locally due to hardware limitations from running on the free version of Hugging Face Spaces. 
+
+You can also refer to the [demo](demo.ipynb) notebook for additional examples on how to use the model.
 
 ### Training
 
