@@ -122,11 +122,15 @@ To train a DeCRED model, follow these steps:
 ## Citation
 If you use DeCRED in your research, please cite the following paper:
 
-```
-@misc{polok_2024_decred,
-  title={Improving Automatic Speech Recognition with Decoder-Centric Regularization in Encoder-Decoder Models},
-  author={Alexander Polok, Santosh Kesiraju, Karel Beneš, Lukáš Burget, Jan Černocký},
-  year={2024},
+```bibtex
+@misc{polok2024improvingautomaticspeechrecognition,
+      title={Improving Automatic Speech Recognition with Decoder-Centric Regularisation in Encoder-Decoder Models}, 
+      author={Alexander Polok and Santosh Kesiraju and Karel Beneš and Lukáš Burget and Jan Černocký},
+      year={2024},
+      eprint={2410.17437},
+      archivePrefix={arXiv},
+      primaryClass={eess.AS},
+      url={https://arxiv.org/abs/2410.17437}, 
 }
 ```
 
