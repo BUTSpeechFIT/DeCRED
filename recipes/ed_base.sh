@@ -4,15 +4,15 @@
 #SBATCH --gpus=48
 #SBATCH --cpus-per-task=128
 #SBATCH --time 2-00:00:00
-#SBATCH --job-name DeCRED_small
+#SBATCH --job-name ED_base
 #SBATCH --partition qgpu
-#SBATCH --output=outputs/decred_base.out
-#SBATCH --error=outputs/decred_base.err
+#SBATCH --output=outputs/ed_base.out
+#SBATCH --error=outputs/ed_base.err
 
 # cd <WORK_DIR>
 source ./env.sh
 RECIPE_DIR="${WORK_DIR}/recipes"
-EXPERIMENT="DeCRED_base"
+EXPERIMENT="ED_base"
 EXPERIMENT_PATH="${WORK_DIR}/experiments/${EXPERIMENT}"
 
 export WANDB_PROJECT="DeCRED"
@@ -21,11 +21,11 @@ export WANDB_RUN_ID="${EXPERIMENT}"
 args=(
   # General training arguments
   --output_dir="${EXPERIMENT_PATH}"
-  --per_device_train_batch_size="80"
-  --per_device_eval_batch_size="8"
+  --per_device_train_batch_size="32"
+  --per_device_eval_batch_size="4"
   --dataloader_num_workers="8"
   --num_train_epochs="400"
-  --group_by_length="False"
+  --group_by_length="True"
   --bf16
   --do_train
   --do_evaluate
@@ -62,7 +62,9 @@ args=(
   --preprocessing_num_workers="16"
   --datasets_creation_config="${RECIPE_DIR}/datasets.json"
   --writer_batch_size="500"
-  --test_splits wsj_test fisher_swbd_dev voxpopuli_test tedlium3_test librispeech_test.clean librispeech_test.other commonvoice_en_test fleurs_test ami_corpus_test gigaspeech_test
+  --test_splits voxpopuli_test
+  --validation_slice="20%"
+  --validation_slice_seed=42
 
   # Preprocessing related arguments
   --data_preprocessing_config="${RECIPE_DIR}/data_preprocessing.json"
@@ -85,4 +87,4 @@ args=(
 
 MASTER=$(scontrol show hostnames "$SLURM_JOB_NODELIST" | head -n 1)
 PORT=13000
-srun --export="MASTER=${MASTER},WORK_DIR=${WORK_DIR},PORT=${PORT}" recipes/multinode_job.sh  "${args[@]}"
+srun --export="MASTER=${MASTER},WORK_DIR=${WORK_DIR},PORT=${PORT},WANDB_PROJECT=${WANDB_PROJECT},WANDB_RUN_ID=${WANDB_RUN_ID}" recipes/multinode_job.sh  "${args[@]}"

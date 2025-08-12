@@ -1,142 +1,191 @@
-# DeCRED: Improving Automatic Speech Recognition with Decoder-Centric Regularization in Encoder-Decoder Models
+# DeCRED: Decoder-Centric Regularization for Encoder-Decoder Based Speech Recognition
 
-## Overview
-This repository contains the implementation of **DeCRED** (**De**coder-**C**entric **R**egularization in **E**ncoder-**D**ecoder), a novel approach aimed at improving automatic speech recognition (ASR) systems. DeCRED enhances model robustness and generalization, particularly in out-of-domain scenarios, by introducing auxiliary classifiers in the decoder layers of encoder-decoder ASR architectures.
-
-## Key Features
-- **Auxiliary Classifiers**: DeCRED integrates auxiliary classifiers in the decoder module to regularize training, improving the model’s ability to generalize across domains.
-- **Enhanced Decoding**: Proposes two new decoding strategies that leverage auxiliary classifiers to re-estimate token probabilities, resulting in more accurate ASR predictions.
-- **Strong Baseline**: Built on the **E-branchformer** architecture, ED achieves competitive word error rates (WER) compared to Whisper-medium and OWSM v3, while requiring significantly less training data and a smaller model size.
-- **Out-of-Domain Performance**: DeCRED demonstrates strong generalization, reducing WERs by 2.7 and 2.9 points on the AMI and Gigaspeech datasets, respectively.
-
-## Results
-
-The figure below compares the Word Error Rates (WERs) of the DeCRED model to the encoder-decoder (ED) baseline:
-
-![ED vs DeCRED WERs](figures/ed_vs_decred.png)
-
-Below are WER comparisons between DeCRED, Whisper-medium, and OWSM v3 systems:
-
-![DeCRED vs Whisper vs OWSM WERs](figures/decred_whisper_owsm.png)
-
-The table below presents WER results for DeCRED and ED systems across various out-of-domain datasets, including FLEURS, AMI, and Gigaspeech:
-
-| Model                             | FLEURS | AMI-ihm | Gigaspeech |
-|-----------------------------------|--------|---------|------------|
-| $\text{ED base}^{(4)}$            | 6.4    | 24.8    | 19.8       |
-| $\text{DeCRED base}^{(4)}$        | 6.7    | 22.1    | 16.9       |
-| $\text{DeCRED base}^{(6)}$        | 6.9    | 21.9    | 17.0       |
-| $\text{DeCRED base}^{(6)\dagger}$ | 6.8    | 21.4    | 16.4       |
-| $\text{OWSM v3}$                  | 8.6    | 35.8    | 34.1       |
-| $\text{Whisper medium}$           | **5.5**| **16.6**| **14.9**   |
-
-The following table summarizes the Zero-Attention Internal Language Model (ILM) BPE-level perplexity estimation for both DeCRED and ED models across several datasets:
-
-| Model           | CV-13 | LS clean | LS other | SB eval2000 | TEDLIUM3 | VoxPopuli | WSJ  | FLEURS | AMI-ihm | Gigaspeech |
-|-----------------|-------|----------|----------|-------------|----------|-----------|------|--------|---------|------------|
-| $\text{DeCRED}$ | 141.0 | 129.1    | 140.4    | 104.1       | 89.0     | 101.4     | 126.0| 111.5  | 136.6   | 66.3       |
-| $\text{ED}$     | 232.4 | 206.1    | 199.9    | 220.3       | 134.6    | 142.7     | 177.3| 159.7  | 308.3   | 84.0       |
-
-## Models on Hugging Face Hub
-- **ED Base**: [BUT-FIT/ED-base](https://huggingface.co/BUT-FIT/ED-base)
-- **ED Small**: [BUT-FIT/ED-small](https://huggingface.co/BUT-FIT/ED-small)
-- **DeCRED Base**: [BUT-FIT/DeCRED-base](https://huggingface.co/BUT-FIT/DeCRED-base)
-- **DeCRED Small**: [BUT-FIT/DeCRED-small](https://huggingface.co/BUT-FIT/DeCRED-small)
-
-## Usage
-
-### Inference
-To perform inference, please visit our [Hugging Face Space](https://huggingface.co/spaces/BUT-FIT/DeCRED-ASR) to test the pre-trained DeCRED model in real-time. 
-
-However, for better performance, we recommend testing it locally due to hardware limitations from running on the free version of Hugging Face Spaces. 
-
-You can also refer to the [demo](demo.ipynb) notebook for additional examples on how to use the model.
-
-### Training
-
-To train a DeCRED model, follow these steps:
-
-1. Set up a Python 3.10 environment, clone the repository, initialize submodules, and install the requirements.
-
-    ```bash
-    # Clone the repository
-    git clone git@github.com:BUTSpeechFIT/DeCRED.git
-    cd DeCRED
-
-    # Optional: Create a new conda environment with Python 3.10
-    # conda create -n hf_asr python=3.10 
-    # conda activate hf_asr
-    
-    # Create a virtual environment
-    python -m venv decred_venv
-    source decred_venv/bin/activate
-    
-    git submodule init
-    git submodule update
-    cd huggingface_asr
-
-    # Install the requirements
-    pip install -r requirements.txt
-    cd ..
-    ```
-
-2. Set up the environment variables in the `env.sh` file.
-
-    ```bash
-    # Activate the newly created environment
-    source decred_venv/bin/activate
-   
-    export PROJECT="DeCRED"
-    export WORK_DIR="/mnt/proj1/open-28-58/lakoc/DeCRED"
-    export HF_HOME="${WORK_DIR}/huggingface_cache"
-    export OMP_NUM_THREADS=64
-    export PYTHONPATH="${PYTHONPATH}:${WORK_DIR}/huggingface_asr"
-    ```
-
-3. Update the paths to WSJ and Fisher datasets in Kaldi format in `recipes/datasets.json`. If you don’t have local instances of these datasets, remove the corresponding entries from the file. Alternatively, you can prune the dataset list to train and evaluate the model on.
-
-4. Run the data preparation script. (Optionally, store the prepared dataset using the `--dump_prepared_dataset_to` argument to speed up future loading.)
-
-    ```bash
-    sbatch recipes/data_prep.sh
-    ```
-
-5. Train the tokenizer. (This step can be skipped if you prefer to use an existing tokenizer.)
-
-    ```bash
-    sbatch recipes/tokenizer.sh
-    ```
-
-6. Initialize the feature extractor, encoder, and decoder configurations. (You can skip this step if you're using existing configurations.)
-
-    ```bash
-    sbatch recipes/initialize_models.sh
-    ```
-
-7. Train the model by selecting the appropriate recipe.
-
-    ```bash
-    sbatch recipes/decred_base.sh
-    ```
-
-## Citation
-If you use DeCRED in your research, please cite the following paper:
-
-```bibtex
-@misc{polok2024improvingautomaticspeechrecognition,
-      title={Improving Automatic Speech Recognition with Decoder-Centric Regularisation in Encoder-Decoder Models}, 
-      author={Alexander Polok and Santosh Kesiraju and Karel Beneš and Lukáš Burget and Jan Černocký},
-      year={2024},
-      eprint={2410.17437},
-      archivePrefix={arXiv},
-      primaryClass={eess.AS},
-      url={https://arxiv.org/abs/2410.17437}, 
-}
-```
-
-## Contact
-For any questions or suggestions, feel free to reach out to [ipoloka@fit.vut.cz](mailto:ipoloka@fit.vut.cz).
+[![Hugging Face Models](https://img.shields.io/badge/🤗-Models-blue.svg)](https://huggingface.co/collections/BUT-FIT/decred-671669beae78266f694ec918)
+[![Paper](https://img.shields.io/badge/Paper-arXiv-red.svg)](https://arxiv.org/abs/XXXXX)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 ---
 
-Contributions are welcome! Feel free to open issues or submit pull requests.
+## Overview
+
+**DeCRED** (**De**coder-**C**entric **R**egularization for **E**ncoder-**D**ecoder ASR) is a lightweight regularization
+method for the **internal language model** (ILM) inside encoder-decoder speech recognition models.
+It improves both **in-domain** and **out-of-domain** robustness without adding computational overhead.
+
+**Key aspects:**
+
+* **Method** – Adds *auxiliary classifiers* to intermediate decoder layers, enabling next-token prediction from
+  intermediate logits.
+* **Effect on ILM** – Reduces mean internal LM BPE perplexity by **36.6%** across 11 test sets.
+* **In-domain WER** – Improves over the baseline in **5/7** test sets, reducing macro WER from **6.4% → 6.3%**.
+* **Out-of-domain WER** – Improves in **3/4** test sets, reducing macro WER from **18.2% → 16.2%** (≈2.0 absolute
+  points).
+* **Single-domain gains** – On TEDLIUM3, achieves **7.0% WER**, surpassing the baseline and encoder-centric InterCTC by
+  0.6% and 0.5%, respectively.
+* **Competitiveness** – Matches or beats much larger models like **OWSM v3.1** and **Whisper-medium**, despite using
+  less training data and having fewer parameters.
+* **Domain adaptation** – A simple adaptation scheme further improves out-of-domain WER by **0.3 points**.
+
+**Limitations:**
+
+* Trained on **English only** (direct multilingual comparison not possible).
+* Experiments scaled only to **6k hours** of training data and **172M parameters**.
+* Gains are smaller when using large-beam beam-search decoding (with added inference cost).
+
+---
+
+## Results
+
+### In-Domain WER
+
+| Model              | CV-13 | SB eval2000 | LS clean | LS other | TEDLIUM3 | VoxPopuli | WSJ | Macro Avg. |
+|--------------------|-------|-------------|----------|----------|----------|-----------|-----|------------|
+| ED (baseline)      | 11.9  | 9.2         | 2.5      | 5.7      | 6.6      | 7.5       | 1.8 | 6.4        |
+| DeCRED (baseline)  | 12.0  | 9.4         | 2.4      | 5.5      | 6.3      | 7.3       | 1.5 | 6.3        |
+| DeCRED (per-token) | 12.2  | 9.1         | 2.3      | 5.5      | 5.7      | 7.3       | 1.5 | 6.2        |
+| Whisper medium     | 12.4  | 14.7        | 3.0      | 5.9      | 4.2      | 8.0       | 3.2 | 7.3        |
+| OWSM v3.1          | 12.9  | 11.2        | 2.4      | 5.0      | 5.0      | 8.5       | 3.5 | 6.9        |
+
+### Out-of-Domain WER
+
+| Model              | FLEURS | AMI ihm | Gigaspeech | Earnings-22 | Macro Avg. |
+|--------------------|--------|---------|------------|-------------|------------|
+| ED (baseline)      | 6.4    | 24.8    | 20.1       | 21.4        | 18.2       |
+| DeCRED (baseline)  | 6.7    | 22.1    | 16.9       | 19.0        | 16.2       |
+| DeCRED (per-token) | 6.7    | 21.9    | 16.7       | 18.3        | 15.9       |
+| OWSM v3.1          | 7.2    | 23.3    | 19.2       | 14.0        | 15.9       |
+| Whisper medium     | 4.5    | 16.6    | 13.8       | 11.7        | 11.7       |
+
+### ILM Perplexity
+
+| Model             | CV-13 | LS clean | LS other | SB eval2000 | TEDLIUM3 | VoxPopuli | WSJ   | FLEURS | AMI-ihm | Gigaspeech | Earnings-22 |
+|-------------------|-------|----------|----------|-------------|----------|-----------|-------|--------|---------|------------|-------------|
+| ED (baseline)     | 455.8 | 459.8    | 473.3    | 474.0       | 297.6    | 286.2     | 676.8 | 306.7  | 537.8   | 297.7      | 592.1       |
+| DeCRED (baseline) | 215.7 | 209.0    | 197.5    | 271.6       | 140.4    | 141.0     | 723.2 | 161.1  | 310.4   | 134.1      | 266.7       |
+
+---
+
+## Models on Hugging Face
+
+* [ED Base](https://huggingface.co/BUT-FIT/ED-base)
+* [ED Small](https://huggingface.co/BUT-FIT/ED-small)
+* [DeCRED Base](https://huggingface.co/BUT-FIT/DeCRED-base)
+* [DeCRED Small](https://huggingface.co/BUT-FIT/DeCRED-small)
+
+---
+
+## 🔍 Inference
+
+You can try DeCRED in two ways:
+
+* **Cloud demo** → [Hugging Face Space](https://huggingface.co/spaces/BUT-FIT/DeCRED-ASR) (runs on Hugging Face’s
+  free-tier hardware, slower for long audio).
+* **Local demo** → [`demo.ipynb`](demo.ipynb) (runs the [🤗 Transformers
+  `pipeline` for ASR](https://huggingface.co/docs/transformers/main_classes/pipelines#transformers.AutomaticSpeechRecognitionPipeline)
+  on your own machine using the downloaded model).
+
+> 💡 The local notebook requires Python, PyTorch, `transformers`, and `torchaudio` installed.
+> Running locally avoids the hardware limits of the free cloud Space and gives full control over inference speed and
+> resources.
+
+Example snippet from the notebook:
+
+```python
+from transformers import pipeline
+
+model_id = "BUT-FIT/DeCRED-base"
+pipe = pipeline("automatic-speech-recognition", model=model_id, feature_extractor=model_id, trust_remote_code=True)
+# In newer versions of transformers (>4.31.0), there is a bug in the pipeline inference type.
+# The warning can be ignored.
+pipe.type = "seq2seq"
+```
+
+---
+
+## 🏋️ Training
+
+**Full training requires following the complete recipe** provided in the [`recipes/`](recipes) folder.
+The process includes environment setup, dataset preparation, tokenizer training, model initialization, and full training
+scripts.
+
+**Steps:**
+
+1. **Clone and set up environment**
+
+   ```bash
+   git clone https://github.com/BUTSpeechFIT/DeCRED.git
+   cd DeCRED
+
+   python -m venv decred_venv
+   source decred_venv/bin/activate
+
+   git submodule init
+   git submodule update
+   cd huggingface_asr
+   pip install -r requirements.txt
+   cd ..
+   ```
+
+2. **Configure environment variables** in `env.sh`
+
+   ```bash
+   source decred_venv/bin/activate
+   export PROJECT="DeCRED"
+   export WORK_DIR="/path/to/DeCRED"
+   export HF_HOME="${WORK_DIR}/huggingface_cache"
+   export OMP_NUM_THREADS=64
+   export PYTHONPATH="${PYTHONPATH}:${WORK_DIR}/huggingface_asr"
+   ```
+
+3. **Prepare datasets**
+
+* Update the paths to **WSJ** and **Fisher** datasets in Kaldi format inside [`recipes/datasets.json`](recipes/datasets.json).
+* If you do not have local copies of these datasets:
+  * Remove their entries from `datasets.json`, **or**
+  * Use the already pruned [`recipes/datasets_hf.json`](recipes/datasets_hf.json), which contains only datasets available on the [Hugging Face Hub](https://huggingface.co/datasets) and requires no local copies.
+* Run the data preparation script. *(Optionally, store the prepared dataset using the `--dump_prepared_dataset_to` argument to speed up future loading.)*
+
+   ```bash
+   sbatch recipes/data_prep.sh
+   ```
+
+4. **Train tokenizer** (optional if using existing tokenizer)
+
+   ```bash
+   sbatch recipes/tokenizer.sh
+   ```
+
+5. **Initialize model configs** (optional if using existing models)
+
+   ```bash
+   sbatch recipes/initialize_models.sh
+   ```
+
+6. **Run training**
+
+   ```bash
+   sbatch recipes/decred_base.sh
+   ```
+
+> 📄 See [`recipes/`](recipes) for alternative configurations (small/base models, domain adaptation, etc.).
+
+---
+
+## Citation
+
+```bibtex
+@inproceedings{polok2025decred,
+  title        = {{DeCRED}: Decoder-Centric Regularization for Encoder-Decoder Based Speech Recognition},
+  author       = {Polok, Alexander and Kesiraju, Santosh and Bene{\v s}, Karel and Yusuf, Bolaji and Burget, Luk{\'a}{\v s} and {\v C}ernock{\'y}, Jan},
+  booktitle    = {2025 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU)},  
+  year         = {2025},
+}
+```
+
+---
+
+## Contact
+
+Questions? → [ipoloka@fit.vut.cz](mailto:ipoloka@fit.vut.cz)
+
+Contributions welcome! Please open an issue or PR.

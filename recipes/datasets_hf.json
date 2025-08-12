@@ -1,0 +1,179 @@
+[
+  {
+    "dataset_name": "facebook/voxpopuli",
+    "dataset_id": "voxpopuli",
+    "load_from_disk": false,
+    "train_splits": [
+      "train"
+    ],
+    "validation_splits": [
+      "validation"
+    ],
+    "test_splits": [
+      "test"
+    ],
+    "text_column_name": "normalized_text",
+    "audio_column_name": "audio",
+    "length_column_name": "input_len",
+    "text_transformations": [
+      "whisper_normalize_english",
+      "clean_special_tokens_english_train",
+      "transforms_unfinished_words_to_unks_train"
+    ],
+    "additional_args": {
+      "name": "en"
+    }
+  },
+  {
+    "dataset_name": "LIUM/tedlium",
+    "dataset_id": "tedlium3",
+    "load_from_disk": false,
+    "train_splits": [
+      "train"
+    ],
+    "validation_splits": [
+      "validation"
+    ],
+    "test_splits": [
+      "test"
+    ],
+    "text_column_name": "text",
+    "audio_column_name": "audio",
+    "length_column_name": "input_len",
+    "text_transformations": [
+      "whisper_normalize_english",
+      "clean_special_tokens_english_train",
+      "transforms_unfinished_words_to_unks_train"
+    ],
+    "additional_args": {
+      "name": "release3"
+    }
+  },
+  {
+    "dataset_name": "librispeech_asr",
+    "dataset_id": "librispeech",
+    "load_from_disk": false,
+    "train_splits": [
+      "train.clean.100",
+      "train.clean.360",
+      "train.other.500"
+    ],
+    "validation_splits": [
+      "validation.clean",
+      "validation.other"
+    ],
+    "test_splits": [
+      "test.clean",
+      "test.other"
+    ],
+    "text_column_name": "text",
+    "audio_column_name": "audio",
+    "length_column_name": "input_len",
+    "text_transformations": [
+      "whisper_normalize_english",
+      "clean_special_tokens_english_train",
+      "transforms_unfinished_words_to_unks_train"
+    ],
+    "additional_args": {
+      "name": "all"
+    }
+  },
+  {
+    "dataset_name": "mozilla-foundation/common_voice_13_0",
+    "dataset_id": "commonvoice_en",
+    "load_from_disk": false,
+    "train_splits": [
+      "train"
+    ],
+    "validation_splits": [
+      "validation"
+    ],
+    "test_splits": [
+      "test"
+    ],
+    "text_column_name": "sentence",
+    "audio_column_name": "audio",
+    "length_column_name": "input_len",
+    "text_transformations": [
+      "whisper_normalize_english",
+      "clean_special_tokens_english_train",
+      "transforms_unfinished_words_to_unks_train"
+    ],
+    "do_resample": true,
+    "reshuffle_at_start": true,
+    "num_proc": 32,
+    "additional_args": {
+      "name": "en"
+    }
+  },
+    {
+    "dataset_name": "google/fleurs",
+    "dataset_id": "fleurs",
+    "load_from_disk": false,
+    "train_splits": [
+    ],
+    "validation_splits": [
+    ],
+    "test_splits": [
+      "test"
+    ],
+    "text_column_name": "transcription",
+    "audio_column_name": "audio",
+    "length_column_name": "input_len",
+    "text_transformations": [
+      "whisper_normalize_english",
+      "clean_special_tokens_english_train",
+      "transforms_unfinished_words_to_unks_train"
+    ],
+    "additional_args": {
+      "name": "en_us"
+    }
+  },
+  {
+    "dataset_name": "speechcolab/gigaspeech",
+    "dataset_id": "gigaspeech",
+    "load_from_disk": false,
+    "train_splits": [
+    ],
+    "validation_splits": [
+    ],
+    "test_splits": [
+      "test"
+    ],
+    "text_column_name": "text",
+    "audio_column_name": "audio",
+    "length_column_name": "input_len",
+    "text_transformations": [
+      "map_gigaspeech_spec_tokens",
+      "whisper_normalize_english",
+      "clean_special_tokens_english_train",
+      "transforms_unfinished_words_to_unks_train"
+    ],
+    "additional_args": {
+      "name": "xs"
+    }
+  },
+  {
+    "dataset_name": "edinburghcstr/ami",
+    "dataset_id": "ami_corpus",
+    "load_from_disk": false,
+    "train_splits": [
+    ],
+    "validation_splits": [
+    ],
+    "test_splits": [
+      "test"
+    ],
+    "text_column_name": "text",
+    "audio_column_name": "audio",
+    "length_column_name": "input_len",
+    "text_transformations": [
+      "whisper_normalize_english",
+      "clean_special_tokens_english_train",
+      "transforms_unfinished_words_to_unks_train"
+    ],
+    "additional_args": {
+      "name": "ihm"
+    }
+  }
+]
