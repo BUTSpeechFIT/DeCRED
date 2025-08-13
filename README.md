@@ -1,7 +1,7 @@
 # DeCRED: Decoder-Centric Regularization for Encoder-Decoder Based Speech Recognition
 
 [![Hugging Face Models](https://img.shields.io/badge/🤗-Models-blue.svg)](https://huggingface.co/collections/BUT-FIT/decred-671669beae78266f694ec918)
-[![Paper](https://img.shields.io/badge/Paper-arXiv-red.svg)](https://arxiv.org/abs/XXXXX)
+[![Paper](https://img.shields.io/badge/Paper-arXiv-red.svg)](https://arxiv.org/abs/2508.08938)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 ---
